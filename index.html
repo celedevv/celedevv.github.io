@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IT-Portfolio von Sergej Milanovic mit Projekten in C++, C#, JavaScript und COBOL.">
+  <title>Sergej Milanovic | Portfolio</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Sergej Milanovic – Startseite">
+        <img class="brand-logo" src="assets/logo.png" alt="" aria-hidden="true">
+        <span>Sergej Milanovic</span>
+      </a>
+      <nav aria-label="Hauptnavigation">
+        <a href="#about">Über mich</a>
+        <a href="#projects">Projekte</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">PORTFOLIO</p>
+          <h1>Sergej Milanovic</h1>
+          <p class="hero-role">Ausbildung & eigene Projekte</p>
+          <p class="hero-text">
+            Hier zeige ich vier Projekte, an denen ich während der Schule und privat gearbeitet habe.
+            Dabei zeige ich nicht nur das Endergebnis, sondern erkläre auch kurz, wie die Projekte aufgebaut sind und welche Teile ich selbst umgesetzt habe.
+          </p>
+          <div class="button-row">
+            <a class="button primary" href="#projects">Projekte</a>
+            <a class="button secondary" href="https://github.com/celedevv" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+
+        <div class="hero-mark" aria-hidden="true">
+          <img src="assets/hero-logo.png" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-soft">
+      <div class="container about-grid">
+        <figure class="profile-card">
+          <img src="assets/profile.jpg" alt="Portrait von Sergej Milanovic">
+        </figure>
+
+        <div class="about-copy">
+          <h2>Über mich</h2>
+          <p>
+            Während meiner Ausbildung zum informationstechnischen Assistenten habe ich in
+            verschiedenen Bereichen der Software- und Webentwicklung gearbeitet. Dazu gehören unter 
+            anderem Frontend- und Backend-Entwicklung, Datenbanken, Spieleentwicklung 
+            und Netzwerktechnik.  
+            Dabei habe ich mit C++, C#, Python, JavaScript, SQL und COBOL sowie 
+            mit Tools und Technologien wie Unity und Qt gearbeitet.
+          </p>
+          <p>
+            Die Projekte hier kommen aus unterschiedlichen Bereichen: C++ mit Qt, Unity mit C#,
+            Webentwicklung und COBOL. Dadurch sieht man auch ziemlich gut, womit ich bisher
+            gearbeitet habe.
+          </p>
+
+          <p class="skills-label"><strong>In diesen Projekten verwendet: </strong></p>
+          <div class="tags" aria-label="Technologien">
+            <span>C++</span><span>Qt</span><span>C#</span><span>Unity</span>
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>COBOL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Meine Projekte</h2>
+
+        <!-- 01 C++ / QT -->
+        <article class="project">
+          <div class="project-heading">
+            <div>
+              <p class="project-number">#1</p>
+              <h3>2D Spaceship Game</h3>
+              <p class="project-subtitle">Qt Creator · C++</p>
+            </div>
+            <span class="project-type">Teamprojekt · 2 Personen</span>
+          </div>
+
+          <div class="project-grid">
+            <div class="media-box youtube-box">
+              <iframe
+                src="https://www.youtube.com/embed/7rkzCeaf83M"
+                title="2D Spaceship Game Gameplay Showcase"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+              <p class="media-note">Kurzer Gameplay-Ausschnitt – die technische Erklärung steht daneben.</p>
+            </div>
+
+            <div class="project-copy">
+              <p>
+                Das Spiel entstand als Projekt in einer Zweiergruppe. Der Spieler steuert ein
+                Raumschiff, weicht Asteroiden und Gegnerprojektilen aus und reagiert auf Ereignisse,
+                die teilweise über einen TCP-Server an den Client geschickt werden.
+              </p>
+
+              <h4>Mein Teil im Projekt</h4>
+              <ul>
+                <li>Spielersteuerung und Bewegung</li>
+                <li>Kollisionen</li>
+                <li>Soundeffekte und Teile des Audio-Systems</li>
+                <li>UI und visuelle Elemente</li>
+              </ul>
+
+              <div class="project-links">
+                 <a class="button primary small" href="https://github.com/celedevv/2D-Space-Game" target="_blank" rel="noopener noreferrer">Code auf GitHub</a>
+                <a class="button small secondary" href="https://youtu.be/aN-kR_ACxxY" target="_blank" rel="noreferrer">YouTube</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="logic-block">
+            <h4>Wie das Projekt funktioniert</h4>
+            <div class="logic-grid">
+              <div><strong>1. Server</strong><span>sendet Befehle wie Spielstart, Gegner-Events oder Werte für Geschwindigkeit und Asteroiden.</span></div>
+              <div><strong>2. Network-Klasse</strong><span>empfängt die Daten über <code>QTcpSocket</code>, puffert sie und zerlegt die Textbefehle.</span></div>
+              <div><strong>3. Signals &amp; Slots</strong><span>geben die empfangenen Events an das eigentliche Spielfenster weiter.</span></div>
+              <div><strong>4. Game Loop</strong><span>Timer aktualisieren Bewegung und Gameplay; <code>QPainter</code> zeichnet Spieler, Gegner und Projektile.</span></div>
+              <div><strong>5. Multimedia</strong><span>separate Klassen kümmern sich um Musik, Soundeffekte und die Video-Hintergründe.</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 UNITY -->
+        <article class="project">
+          <div class="project-heading">
+            <div>
+              <p class="project-number">#2</p>
+              <h3>Unity Movement Prototype</h3>
+              <p class="project-subtitle">Unity · C#</p>
+            </div>
+            <span class="project-type">Eigenes Movement-System</span>
+          </div>
+
+          <div class="project-grid">
+            <div class="media-box youtube-box">
+              <iframe
+                src="https://www.youtube.com/embed/aN-kR_ACxxY"
+                title="Unity Gameplay Showcase"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+              <p class="media-note">Kurzer Gameplay-Ausschnitt – die technische Erklärung steht daneben.</p>
+            </div>
+
+            <div class="project-copy">
+              <p>
+                Bei diesem Unity-Projekt habe ich besonders viel Zeit in das Movement gesteckt.
+                Ich wollte nicht einfach einen fertigen First-Person-Controller übernehmen, sondern
+                selbst verstehen, wie Bewegung, Rigidbody-Physik, Kamera und Gun Sway zusammenarbeiten.
+                Das Ziel war, dass sich die Bewegung möglichst flüssig anfühlt.
+              </p>
+
+              <h4>Woran ich gearbeitet habe</h4>
+              <ul>
+                <li>Walking, Sprinting, Jumping und Crouching</li>
+                <li>Sliding mit eigener Momentum-Logik</li>
+                <li>Bewegung auf normalen Flächen, in der Luft und auf Gefällen</li>
+                <li>Raycasts, damit der Spieler unter Hindernissen nicht einfach aufsteht</li>
+                <li>Mouse-Look und FOV-Wechsel beim Sprinten</li>
+                <li>Gun Sway beim Drehen und seitlichen Bewegen</li>
+              </ul>
+
+              <div class="project-links">
+                <a class="button primary small" href="https://github.com/celedevv/Movement-Framework" target="_blank" rel="noopener noreferrer">Code auf GitHub</a>
+                <a class="button small secondary" href="https://youtu.be/7rkzCeaf83M" target="_blank" rel="noreferrer">YouTube</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="logic-block">
+            <h4>Wie das Movement aufgebaut ist</h4>
+            <div class="logic-grid">
+              <div><strong>1. Input</strong><span><code>Update()</code> liest Tastaturzustände und entscheidet, ob der Spieler läuft, sprintet, springt, croucht oder slidet.</span></div>
+              <div><strong>2. Physik</strong><span><code>FixedUpdate()</code> wendet die eigentlichen Kräfte auf den <code>Rigidbody</code> an.</span></div>
+              <div><strong>3. Ground / Air / Slope</strong><span>Raycasts prüfen Boden und Gefälle. Auf Slopes wird die Bewegungsrichtung auf die Fläche projiziert.</span></div>
+              <div><strong>4. Sliding</strong><span>Auf Gefällen baut sich zusätzliche Kraft auf. Auf flachem Boden nimmt sie wieder ab.</span></div>
+              <div><strong>5. Kamera &amp; Waffe</strong><span>Kamera-FOV und Gun Sway reagieren auf Bewegung und Sprint-Zustand und werden weich interpoliert.</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03 VITROMETER -->
+        <article class="project">
+          <div class="project-heading">
+            <div>
+              <p class="project-number">#3</p>
+              <h3>Vitrometer</h3>
+              <p class="project-subtitle">HTML · CSS · JavaScript</p>
+            </div>
+            <span class="project-type">Webprojekt</span>
+          </div>
+
+          <div class="project-grid">
+            <figure class="image-box">
+              <a href="https://celedevv.github.io/Vitrometer/"
+                target="_blank"
+                rel="noopener noreferrer">
+                <img src="assets/vitrometer.png" alt="Screenshot der Vitrometer-Webanwendung">
+              </a>
+              <figcaption>Die Auswahl verändert sowohl den angezeigten Wert als auch die Farbringe.</figcaption>
+            </figure>
+
+            <div class="project-copy">
+              <p>
+                Das Vitrometer ist eine kleine Webseite für Widerstandswerte. Man wählt die vier
+                Farbringe aus und die Seite berechnet daraus den Wert. Gleichzeitig werden die
+                Balken auf der Widerstandsgrafik passend eingefärbt.
+              </p>
+
+              <h4>Wie es funktioniert</h4>
+              <ul>
+                <li>Die Dropdowns liefern die Werte der ausgewählten Farbringe</li>
+                <li>JavaScript liest die Auswahl mit <code>getElementById()</code> aus</li>
+                <li>Multiplikator und Toleranz werden über Arrays zugeordnet</li>
+                <li>Der berechnete Wert wird direkt im DOM ausgegeben</li>
+                <li>Die vier Balken der Grafik bekommen dynamisch die ausgewählten Farben</li>
+              </ul>
+
+              <div class="project-links">
+                <a class="button primary small"
+                  href="https://github.com/celedevv/Vitrometer"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Code auf GitHub
+                </a>
+
+                <a class="button secondary small"
+                  href="https://celedevv.github.io/Vitrometer/"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 COBOL -->
+        <article class="project">
+          <div class="project-heading">
+            <div>
+              <p class="project-number">#4</p>
+              <h3>Filmdatenbank</h3>
+              <p class="project-subtitle">COBOL · CRUD</p>
+            </div>
+            <span class="project-type">Konsolenprogramm</span>
+          </div>
+
+          <div class="project-grid">
+            <div class="code-card">
+              <div class="code-title">data-program.cbl</div>
+              <pre><code>access-film section.
+    read film-data
+    perform handle-error-messages
+
+    if status-ok
+        display "FILM-ID: "
+          film-number of film-data
+        display "NAME: "
+          film-name of film-data
+        display "ERSCHEINUNGSDATUM: "
+          film-release-year of film-data
+    end-if.</code></pre>
+            </div>
+            <div class="project-copy">
+              <p>
+                Die Filmdatenbank habe ich in COBOL gebaut. Die erste Version hat die Filme nur in
+                einer Tabelle im Arbeitsspeicher gehalten. Danach habe ich sie zu einer Version mit
+                einer indexierten Datei erweitert, damit die Daten auch nach dem Beenden gespeichert bleiben.
+              </p>
+
+              <h4>Was die spätere Version kann</h4>
+              <ul>
+                <li>Filme anlegen, lesen, ändern und löschen</li>
+                <li>Speicherung in einer Indexed File</li>
+                <li>Filmnummer als Record Key; Name und Jahr als alternative Keys</li>
+                <li>Sortierung nach Name oder Erscheinungsjahr</li>
+                <li>Filtern nach einem oder zwei Schauspielern</li>
+                <li>Prüfung auf doppelte Filmnummern und Namen</li>
+                <li>Behandlung verschiedener File-Status-Codes</li>
+              </ul>
+
+              <div class="project-links">
+                <a class="button primary small"
+                  href="https://github.com/celedevv/Filmdatenbank"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Code auf GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="logic-block">
+            <h4>Grundidee der Datenbank</h4>
+            <div class="logic-grid four">
+              <div><strong>1. Menü</strong><span>Der Benutzer wählt eine Aktion wie Anzeigen, Ändern, Einfügen, Löschen, Sortieren oder Filtern.</span></div>
+              <div><strong>2. Schlüssel</strong><span>Ein Film wird über seine Filmnummer angesprochen; Name und Jahr können als alternative Schlüssel verwendet werden.</span></div>
+              <div><strong>3. Datei</strong><span><code>READ</code>, <code>WRITE</code>, <code>REWRITE</code> und <code>DELETE</code> arbeiten direkt mit der indexierten Datei.</span></div>
+              <div><strong>4. Filter</strong><span>Bei der Schauspielersuche werden die Actor-Felder eines Films durchlaufen und mit der Eingabe verglichen.</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-soft">
+      <div class="container contact-box">
+        <div>
+          <p class="section-kicker">ERREICHBAR</p>
+          <h2>Kontakt</h2>
+          <p>
+            Den Quellcode zu den Projekten findet man auf meinem GitHub-Profil. Bei Fragen bin ich auch per E-Mail erreichbar.
+          </p>
+        </div>
+        <div class="contact-links">
+          <a href="https://github.com/celedevv" target="_blank" rel="noreferrer">github.com/celedevv</a>
+          <span class="contact-placeholder">sergej2007m@gmail.com</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <span>Sergej Milanovic</span>
+      <span>Portfolio · 2026</span>
+    </div>
+  </footer>
+</body>
+</html>
